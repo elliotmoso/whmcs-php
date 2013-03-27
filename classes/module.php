@@ -13,10 +13,6 @@ class WHMCS_Module extends WHMCS_Api
 	/**
 	 * Run the module create command
 	 *
-	 * Parameters:
-	 *
-	 * accountid - the unique id number of the account in the tblhosting table
-	 *
 	 * @see http://docs.whmcs.com/API:Module_Create
 	 */
 	public static function module_create($params = array())
@@ -27,11 +23,6 @@ class WHMCS_Module extends WHMCS_Api
 	
 	/**
 	 * Run the module suspend command
-	 *
-	 * Parameters:
-	 *
-	 * accountid - the unique id number of the account in the tblhosting table
-	 * suspendreason - an explanation of why the suspension has been made shown to clients & staff
 	 *
 	 * @see http://docs.whmcs.com/API:Module_Suspend
 	 */
@@ -44,10 +35,6 @@ class WHMCS_Module extends WHMCS_Api
 	/**
 	 * Run the module unsuspend command
 	 *
-	 * Parameters:
-	 *
-	 * accountid - the unique id number of the account in the tblhosting table
-	 *
 	 * @see http://docs.whmcs.com/API:Module_Unsuspend
 	 */
 	public static function module_unsuspend($params = array())
@@ -58,10 +45,6 @@ class WHMCS_Module extends WHMCS_Api
 	
 	/**
 	 * Run the module terminate command
-	 *
-	 * Parameters:
-	 *
-	 * accountid - the unique id number of the account in the tblhosting table
 	 *
 	 * @see http://docs.whmcs.com/API:Module_Terminate
 	 */
@@ -74,10 +57,6 @@ class WHMCS_Module extends WHMCS_Api
 	/**
 	 * Run the change package module command
 	 *
-	 * Parameters:
-	 *
-	 * serviceid - ID of the service in WHMCS to run the module command
-	 *
 	 * @see http://docs.whmcs.com/API:Module_Change_Package
 	 */
 	public static function module_change_package($params = array())
@@ -88,11 +67,6 @@ class WHMCS_Module extends WHMCS_Api
 	
 	/**
 	 * Runs the change password command to the module for a service
-	 *
-	 * Parameters:
-	 *
-	 * serviceid - the unique id of the service to perform the action on
-	 * servicepassword - optional - specify to update the password on the service before calling
 	 *
 	 * @see http://docs.whmcs.com/API:Module_Change_Password
 	 */

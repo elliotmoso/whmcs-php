@@ -11,12 +11,7 @@
 class WHMCS_Domain extends WHMCS_Api
 {
 	/**
-	 * Sends a register command to the registrar 
-	 *
-	 * Parameters:
-	 *
-	 * domainid - Domain ID from WHMCS
-	 * domain - The domain name (send domain id *or* domain)
+	 * Sends a register command to the registrar
 	 *
 	 * @see http://docs.whmcs.com/API:Register_Domain
 	 */
@@ -27,12 +22,7 @@ class WHMCS_Domain extends WHMCS_Api
 	}
 	
 	/**
-	 * Sends a renew command to the registrar 
-	 *
-	 * Parameters:
-	 *
-	 * domainid - Domain ID from WHMCS
-	 * domain - The domain name (send domain id *or* domain)
+	 * Sends a renew command to the registrar
 	 *
 	 * @see http://docs.whmcs.com/API:Renew_Domain
 	 */
@@ -43,13 +33,7 @@ class WHMCS_Domain extends WHMCS_Api
 	}
 	
 	/**
-	 * Sends a transfer command to the registrar 
-	 *
-	 * Parameters:
-	 *
-	 * domainid - Domain ID from WHMCS
-	 * domain - The domain name (send domain id *or* domain)
-	 * eppcode - Optional - The EPP code for the transfer
+	 * Sends a transfer command to the registrar
 	 *
 	 * @see http://docs.whmcs.com/API:Transfer_Domain
 	 */
@@ -60,13 +44,7 @@ class WHMCS_Domain extends WHMCS_Api
 	}
 	
 	/**
-	 * Sends a release command to the registrar 
-	 *
-	 * Parameters:
-	 *
-	 * domainid - Domain ID from WHMCS
-	 * domain - The domain name (send domain id *or* domain)
-	 * newtag - The new tag for the domain (Tag List)
+	 * Sends a release command to the registrar
 	 *
 	 * @see http://docs.whmcs.com/API:Release_Domain
 	 * @see http://www.nominet.org.uk/registrars/becomeregistrar/taglist/
@@ -80,10 +58,6 @@ class WHMCS_Domain extends WHMCS_Api
 	/**
 	 * Obtain the lock state of a domain name
 	 *
-	 * Parameters:
-	 *
-	 * domainid - ID of the domain at the registrar
-	 *
 	 * @see http://docs.whmcs.com/API:Domain_Locking_Status
 	 */
 	public static function get_domain_lock($params = array())
@@ -94,10 +68,6 @@ class WHMCS_Domain extends WHMCS_Api
 	
 	/**
 	 * Obtain the nameservers of a domain name
-	 *
-	 * Parameters:
-	 *
-	 * domainid - ID of the domain at the registrar
 	 *
 	 * @see http://docs.whmcs.com/API:Domain_Nameservers
 	 */
@@ -110,10 +80,6 @@ class WHMCS_Domain extends WHMCS_Api
 	/**
 	 * Obtain the whois of a domain name
 	 *
-	 * Parameters:
-	 *
-	 * domainid - ID of the domain at the registrar
-	 *
 	 * @see http://docs.whmcs.com/API:Get_Domain_WHOIS
 	 */
 	public static function get_whois($params = array())
@@ -124,10 +90,6 @@ class WHMCS_Domain extends WHMCS_Api
 	
 	/**
 	 * Obtain the EPP Code of a domain name
-	 *
-	 * Parameters:
-	 *
-	 * domainid - ID of the domain at the registrar
 	 *
 	 * @see http://docs.whmcs.com/API:Domain_EPP
 	 */
@@ -140,11 +102,6 @@ class WHMCS_Domain extends WHMCS_Api
 	/**
 	 * Toggle ID protect for a domain name
 	 *
-	 * Parameters:
-	 *
-	 * domainid - ID of the domain at the registrar
-	 * idprotect - true/false
-	 *
 	 * @see http://docs.whmcs.com/API:Toggle_ID_Protect
 	 */
 	public static function toggle_id_protect($params = array())
@@ -155,11 +112,6 @@ class WHMCS_Domain extends WHMCS_Api
 	
 	/**
 	 * Update the lock state of a domain name
-	 *
-	 * Parameters:
-	 *
-	 * domainid - ID of the domain at the registrar
-	 * lockstatus - Leave blank or set to 0 to unlock domain or 1 to lock
 	 *
 	 * @see http://docs.whmcs.com/API:Domain_Update_Lock
 	 */
@@ -172,15 +124,6 @@ class WHMCS_Domain extends WHMCS_Api
 	/**
 	 * Update the nameservers of a domain name
 	 *
-	 * Parameters:
-	 *
-	 * domainid - ID of the domain at the registrar
-	 * domain - domainname to update (use domainid OR domain)
-	 * ns1 - nameserver1 *Required
-	 * ns2 - nameserver2 *Required
-	 * ns3 - nameserver3 Optional
-	 * ns4 - nameserver4 Optional
-	 *
 	 * @see http://docs.whmcs.com/API:Domain_Update_Nameservers
 	 */
 	public static function update_nameservers($params = array())
@@ -192,11 +135,6 @@ class WHMCS_Domain extends WHMCS_Api
 	/**
 	 * Update the contact information on a domain name
 	 *
-	 * Parameters:
-	 *
-	 * domainid - ID of the domain at the registrar
-	 * xml - xml of the details to update
-	 *
 	 * @see http://docs.whmcs.com/API:Domain_Update_WHOIS
 	 */
 	public static function update_whois($params = array())
@@ -207,10 +145,6 @@ class WHMCS_Domain extends WHMCS_Api
 	
 	/**
 	 * Perform a whois lookup for a domain name
-	 *
-	 * Parameters:
-	 *
-	 * domain - the domain to check
 	 *
 	 * @see http://docs.whmcs.com/API:Domain_WHOIS
 	 */

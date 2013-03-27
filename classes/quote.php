@@ -13,34 +13,6 @@ class WHMCS_Quote extends WHMCS_Api
 	/**
 	 * Create a new quote
 	 *
-	 * Parameters:
-	 *
-	 * userid - the unique id number of the client in the tblclients table
-	 * firstname - optional - only required if userid is not specified
-	 * lastname - optional - only required if userid is not specified
-	 * companyname - optional - only required if userid is not specified
-	 * email - optional - only required if userid is not specified
-	 * address1 - optional - only required if userid is not specified
-	 * address2 - optional - only required if userid is not specified
-	 * city - optional - only required if userid is not specified
-	 * state - optional - only required if userid is not specified
-	 * postcode - optional - only required if userid is not specified
-	 * country - optional - only required if userid is not specified
-	 * phonenumber - optional - only required if userid is not specified
-	 * currency - optional - only required if userid is not specified
-	 * subject - Subject of the quote
-	 * stage - Draft,Delivered,On Hold,Accepted,Lost,Dead
-	 * validuntil - In format set in Localisation
-	 * datecreated - Optional - In format set in Localisation
-	 * customernotes - notes that are viewable by the client
-	 * adminnotes - notes that are admin only
-	 * lineitems - a base64 encoded serialized array containing:
-	 * desc - The line description
-	 * qty - The quantity being quoted
-	 * up - unit price
-	 * discount - discount amount in %
-	 * taxable - true or false
-	 *
 	 * @see http://docs.whmcs.com/API:Create_Quote
 	 */
 	public static function create_quote($params = array())
@@ -51,36 +23,6 @@ class WHMCS_Quote extends WHMCS_Api
 	
 	/**
 	 * Update an existing quote
-	 *
-	 * Parameters:
-	 *
-	 * quoteid - the id number of the quote in tblquotes
-	 * userid - the unique id number of the client in the tblclients table
-	 * firstname - optional - only required if userid is not specified
-	 * lastname - optional - only required if userid is not specified
-	 * companyname - optional - only required if userid is not specified
-	 * email - optional - only required if userid is not specified
-	 * address1 - optional - only required if userid is not specified
-	 * address2 - optional - only required if userid is not specified
-	 * city - optional - only required if userid is not specified
-	 * state - optional - only required if userid is not specified
-	 * postcode - optional - only required if userid is not specified
-	 * country - optional - only required if userid is not specified
-	 * phonenumber - optional - only required if userid is not specified
-	 * currency - optional - only required if userid is not specified
-	 * subject - Subject of the quote
-	 * stage - Draft,Delivered,On Hold,Accepted,Lost,Dead
-	 * validuntil - In format set in Localisation
-	 * datecreated - Optional - In format set in Localisation
-	 * customernotes - notes that are viewable by the client
-	 * adminnotes - notes that are admin only
-	 * lineitems - a base64 encoded serialized array containing:
-	 * id - existing lineid only required to update existing lines
-	 * desc - The line description
-	 * qty - The quantity being quoted
-	 * up - unit price
-	 * discount - discount amount in %
-	 * taxable - true or false
 	 *
 	 * @see http://docs.whmcs.com/API:Update_Quote
 	 */
@@ -93,10 +35,6 @@ class WHMCS_Quote extends WHMCS_Api
 	/**
 	 * Delete a quote
 	 *
-	 * Parameters:
-	 *
-	 * quoteid - the id number of the quote in tblquotes
-	 *
 	 * @see http://docs.whmcs.com/API:Delete_Quote
 	 */
 	public static function delete_quote($params = array())
@@ -107,10 +45,6 @@ class WHMCS_Quote extends WHMCS_Api
 	
 	/**
 	 * Send a quote to client
-	 *
-	 * Parameters:
-	 *
-	 * quoteid - the id number of the quote in tblquotes
 	 *
 	 * @see http://docs.whmcs.com/API:Send_Quote
 	 */
@@ -123,10 +57,6 @@ class WHMCS_Quote extends WHMCS_Api
 	/**
 	 * Accept a quote
 	 *
-	 * Parameters:
-	 *
-	 * quoteid - the id number of the quote in tblquotes
-	 *
 	 * @see http://docs.whmcs.com/API:Accept_Quote
 	 */
 	public static function accept_quote($params = array())
@@ -137,18 +67,6 @@ class WHMCS_Quote extends WHMCS_Api
 	
 	/**
 	 * Get quotes
-	 *
-	 * Parameters:
-	 *
-	 * quoteid - optional - specific quote to obtain
-	 * userid - optional - obtain quotes for a specific user
-	 * datecreated - optional - Format YYYYMMDD
-	 * lastmodified - optional - Format YYYYMMDD
-	 * validuntil - optional - Format YYYYMMDD
-	 * stage - optional - Specific stage to retrieve quotes for
-	 * subject - optional - to obtain quotes with a specific subject
-	 * limitstart - optional - for pagination, specify an ID to start at
-	 * limitnum - optional - to restrict the number of results returned
 	 *
 	 * @see http://docs.whmcs.com/API:Get_Quotes
 	 */

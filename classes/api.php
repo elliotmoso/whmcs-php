@@ -59,11 +59,6 @@ class WHMCS_Api
 	/**
 	 * Sends an API request to the WHMCS API
 	 *
-	 * Parameters:
-	 * action - The API action to perform
-	 *
-	 * All other parameters are passed along as HTTP POST variables
-	 *
 	 * @param array $params The parameters to pass to WHMCS
 	 * 
 	 * @throws Exception

@@ -13,32 +13,6 @@ class WHMCS_Order extends WHMCS_Api
 	/**
 	 * Create a new order
 	 *
-	 * Parameters:
-	 *
-	 * clientid - client id for order
-	 * pid - product id
-	 * domain - domain name
-	 * billingcycle - onetime, monthly, quarterly, semiannually, etc..
-	 * addons - comma seperated list of addon ids
-	 * customfields - a base64 encoded serialized array of custom field values
-	 * configoptions - a base64 encoded serialized array of configurable product options
-	 * domaintype - set for domain registration - register or transfer
-	 * regperiod - 1,2,3,etc...
-	 * dnsmanagement - true to enable
-	 * emailforwarding - true to enable
-	 * idprotection - true to enable
-	 * eppcode - if transfer
-	 * nameserver1 - first nameserver (req for domain reg only)
-	 * nameserver2 - second nameserver
-	 * nameserver3 - third nameserver
-	 * nameserver4 - fourth nameserver
-	 * paymentmethod - paypal, authorize, etc...
-	 * promocode - pass coupon code to apply to the order (optional)
-	 * affid - affiliate ID if you want to assign the order to an affiliate (optional)
-	 * noinvoice - set true to not generate an invoice for this order
-	 * noemail - set true to surpress the order confirmation email
-	 * clientip - can be used to pass the customers IP (optional)
-	 *
 	 * @see http://docs.whmcs.com/API:Add_Order
 	 */
 	public static function add_order($params = array())
@@ -49,14 +23,6 @@ class WHMCS_Order extends WHMCS_Api
 	
 	/**
 	 * Get orders
-	 *
-	 * Parameters:
-	 *
-	 * id - to get a specific order ID only
-	 * userid - to get all orders for a specific client ID
-	 * status - to get all orders in a specific status: Pending, Active, Fraud, Cancelled
-	 * limitstart - The record number to start at (default = 0)
-	 * limitnum - The number of order records to return (default = 25)
 	 *
 	 * @see http://docs.whmcs.com/API:Get_Orders
 	 */
@@ -69,12 +35,6 @@ class WHMCS_Order extends WHMCS_Api
 	/**
 	 * Get products
 	 *
-	 * Parameters:
-	 *
-	 * pid - can be used to just retrieve the details of a specific product ID
-	 * gid - can be passed to just retrieve products in a specific group
-	 * module - can be passed to just retrieve products assigned to a specific module
-	 *
 	 * @see http://docs.whmcs.com/API:Get_Products
 	 */
 	public static function get_products($params = array())
@@ -85,10 +45,6 @@ class WHMCS_Order extends WHMCS_Api
 	
 	/**
 	 * Get promotions
-	 *
-	 * Parameters:
-	 *
-	 * code - the specific promotion code to return information for (optional)
 	 *
 	 * @see http://docs.whmcs.com/API:Get_Promotions
 	 */
@@ -112,10 +68,6 @@ class WHMCS_Order extends WHMCS_Api
 	/**
 	 * Accept an order
 	 *
-	 * Parameters:
-	 *
-	 * orderid - the Order ID
-	 *
 	 * @see http://docs.whmcs.com/API:Accept_Order
 	 */
 	public static function accept_order($params = array())
@@ -126,10 +78,6 @@ class WHMCS_Order extends WHMCS_Api
 	
 	/**
 	 * Place an order in pending
-	 *
-	 * Parameters:
-	 *
-	 * orderid - the Order ID
 	 *
 	 * @see http://docs.whmcs.com/API:Pending_Order
 	 */
@@ -142,10 +90,6 @@ class WHMCS_Order extends WHMCS_Api
 	/**
 	 * Cancel an order
 	 *
-	 * Parameters:
-	 *
-	 * orderid - the Order ID
-	 *
 	 * @see http://docs.whmcs.com/API:Cancel_Order
 	 */
 	public static function cancel_order($params = array())
@@ -157,10 +101,6 @@ class WHMCS_Order extends WHMCS_Api
 	/**
 	 * Mark an order as fraud
 	 *
-	 * Parameters:
-	 *
-	 * orderid - the Order ID
-	 *
 	 * @see http://docs.whmcs.com/API:Fraud_Order
 	 */
 	public static function fraud_order($params = array())
@@ -171,10 +111,6 @@ class WHMCS_Order extends WHMCS_Api
 	
 	/**
 	 * Delete an order
-	 *
-	 * Parameters:
-	 *
-	 * orderid - the Order ID
 	 *
 	 * @see http://docs.whmcs.com/API:Delete_Order
 	 */
