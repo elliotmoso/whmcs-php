@@ -7,7 +7,7 @@
  * @copyright   2013 Craig G Smith
  * @link        http://www.omnihost.co.nz
  * @license     MIT LICENSE
- * @version     1.0.1
+ * @version     1.0.2
  * @package     Whmcs
  * 
  */
@@ -67,28 +67,28 @@ class Client extends \Whmcs\Api {
     }
 
     /**
-     * Get multiple clients
-     *
-     * @see http://docs.whmcs.com/API:Get_Clients
+     * This command is used to generate a list of clients
+     * @param string $search filter for clients with a name/email matching the term entered (false to ignore)
+     * @param int $limitstart Record to start at
+     * @param int $limitnum Number of records to return 
+     * @return Mixed
      */
-    public static function getClients($params = array()) {
+    public static function getClients($search = false, $limitstart = 0, $limitnum = 25) {
+        $params['limitstart'] = $limitstart;
+        $params['limitnum'] = $limitnum;
+        if($search){
+            $params['search'] = $search;
+        }
         $params['action'] = 'getclients';
         return self::sendRequest($params);
     }
-
-    /**
-     * 
-     *
-     * @
-     * 
-     */
 
     /**
      * This command is used to retrieve all the data held about a client in the WHMCS System for a given ID or email address
      * Either id or email is required!
      * @see http://docs.whmcs.com/API:Get_Clients_Details
      * @param mixed $identifier either the clientId or email address
-     * @param boolean $stats
+     * @param boolean $stats Get client statistics
      * @return mixed
      */
     public static function getClientsDetails($identifier, $stats = false) {
@@ -105,7 +105,7 @@ class Client extends \Whmcs\Api {
 
         $params['action'] = 'getclientsdetails';
         $params['stats'] = $stats;
-        
+
         return self::sendRequest($params);
     }
 
