@@ -7,7 +7,7 @@
  * @copyright   2013 Craig G Smith
  * @link        http://www.omnihost.co.nz
  * @license     MIT LICENSE
- * @version     1.0.0
+ * @version     1.0.1
  * @package     Whmcs
  * 
  */
@@ -77,12 +77,35 @@ class Client extends \Whmcs\Api {
     }
 
     /**
-     * Get a client's info
+     * 
      *
-     * @see http://docs.whmcs.com/API:Get_Clients_Details
+     * @
+     * 
      */
-    public static function getClientsDetails($params = array()) {
+
+    /**
+     * This command is used to retrieve all the data held about a client in the WHMCS System for a given ID or email address
+     * Either id or email is required!
+     * @see http://docs.whmcs.com/API:Get_Clients_Details
+     * @param mixed $identifier either the clientId or email address
+     * @param boolean $stats
+     * @return mixed
+     */
+    public static function getClientsDetails($identifier, $stats = false) {
+
+        if (!$identifier) {
+            throw new \Whmcs\Exception('Either Client ID or Email address required');
+        }
+
+        if (is_numeric($identifier)) {
+            $params['id'] = $identifier;
+        } else {
+            $params['email'] = $identifier;
+        }
+
         $params['action'] = 'getclientsdetails';
+        $params['stats'] = $stats;
+        
         return self::sendRequest($params);
     }
 
