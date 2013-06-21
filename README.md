@@ -42,7 +42,7 @@ Download and extract into your project directory and require it in your applicat
     <?php
     
 
-    \WHMCS\Client::init('http://example.com/includes/api.php', 'someusername', md5('somepass'));
-    var_dump(\WHMCS\Client::getClientDetails(array('clientid' => '1')));
+    \Whmcs\Client::init('http://example.com/includes/api.php', 'someusername', md5('somepass'));
+    var_dump(\Whmcs\Client::getClientsDetails(array('clientid' => '1')));
 
 
