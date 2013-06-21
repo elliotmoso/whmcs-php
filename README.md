@@ -1,19 +1,48 @@
-# whmcs-php
+# Whmcs Php Api SDK
 
-whmcs-php provides an PHP SDK for the [WHMCS API](http://docs.whmcs.com/API:Functions).
+Whmcs Php Api SDK for the [WHMCS API](http://docs.whmcs.com/API:Functions).
 
+#Installation
+##Composer Install
+Install composer in your project:
 
-## Usage
+    curl -s https://getcomposer.org/installer | php
+    
+Create a composer.json file in your project root:
+
+    {
+        "require": {
+            "slim/slim": "2.*"
+        }
+    }
+Install via composer:
+
+    php composer.phar install
+    
+Add this line to your application’s index.php file:
 
     <?php
-    require_once 'autoloader.php';
+    require 'vendor/autoload.php';
 
-    WHMCS_Client::init('http://example.com/includes/api.php', 'someusername', md5('somepass'));
-    var_dump(WHMCS_Client::get_clients_details(array('clientid' => '1')));
+##Manual Install
+Download and extract into your project directory and require it in your application’s index.php file. You'll also need to register the autoloader.
+    
+    <?php
+    require 'Whmcs/Whmcs.php';
+    \Whmcs\Whmcs::registerAutoloader();
+    
+##System Requirements
+* PHP >= 5.3.0
+* WHMCS 5 +
+* CURL
+    
 
-See the `classes` folder in this repo for usage details.
+## Example Usage
+
+    <?php
+    
+
+    \WHMCS\Client::init('http://example.com/includes/api.php', 'someusername', md5('somepass'));
+    var_dump(\WHMCS\Client::getClientDetails(array('clientid' => '1')));
 
 
-## Copyright
-
-Copyright (c) 2011 DotBlock.com, see LICENSE in this repo for details.
