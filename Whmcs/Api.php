@@ -40,6 +40,11 @@ class Api {
     public static $api_access_key;
 
     /**
+     * Output json_decode as an object
+     */
+    public static $object=false
+    ;
+    /**
      * Sets the WHMCS API settings
      *
      * @param string $api_url        The url to the WHMCS API
@@ -112,7 +117,7 @@ class Api {
 
         curl_close($connection);
 
-        $response = json_decode(trim($response));
+        $response = json_decode(trim($response),self::$object);
 
         if ($response == null) {
             return null;
